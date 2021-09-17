@@ -4,3 +4,4 @@ $diasfortnite = file_get_contents("https://jose89fcb.es/diasFortnite/diasfortnit
 
 echo $diasfortnite;
 
+?>
