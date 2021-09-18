@@ -1,0 +1,29 @@
+import discord
+from discord.ext import commands
+import json
+import requests
+
+ 
+bot = commands.Bot(command_prefix='!', description="ayuda bot") #Comando
+bot.remove_command("help") # Borra el comando por defecto !help
+ 
+ 
+@bot.command()
+async def temporadafn(ctx): #Comando a decir
+
+   response = requests.get("https://jose89fcb.es/diasFortnite/dias.php")
+
+   diasFortnite = response.json()['DiasFN']
+   
+   await ctx.send(diasFortnite) #Mensaje que dira el bot
+ 
+ 
+
+ 
+@bot.event
+async def on_ready():
+    print("BOT listo!")
+    
+ 
+    
+bot.run('TOKEN AQUÍ') #OBTEN UN TOKEN EN: https://discord.com/developers/applications
